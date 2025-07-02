@@ -1,4 +1,5 @@
 import 'package:flutter/cupertino.dart';
+import 'package:myapp/views/core/chats.dart';
 import 'package:myapp/widgets/navigation/cutom_nav_bar.dart';
 
 void main() {
@@ -27,7 +28,7 @@ class _HomeState extends State<Home> {
     return CupertinoPageScaffold(
       child: Stack(
         children: [
-          Center(child: Text("Hello world")),
+          Chats(),
           Positioned(bottom: 0, right: 0, left: 0, child: CustomNavBar()),
         ],
       ),

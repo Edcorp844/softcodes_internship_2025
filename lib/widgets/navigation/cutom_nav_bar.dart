@@ -20,6 +20,9 @@ class _CustomNavBarState extends State<CustomNavBar> {
             decoration: BoxDecoration(
               color: const Color.fromARGB(41, 238, 242, 246),
               borderRadius: BorderRadius.circular(50),
+              border: Border.all(
+                color: CupertinoColors.separator.resolveFrom(context),
+              ),
             ),
             child: Row(
               children: [
