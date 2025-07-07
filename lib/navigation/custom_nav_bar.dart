@@ -4,7 +4,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:myapp/navigation/bar_item.dart';
 
 class CustomNavBar extends StatefulWidget {
-  const CustomNavBar({super.key});
+  final Function(int) onTabselected;
+  const CustomNavBar({super.key, required this.onTabselected});
 
   @override
   State<CustomNavBar> createState() => _CustomNavBarState();
@@ -16,10 +17,11 @@ class _CustomNavBarState extends State<CustomNavBar> {
   void onTabselected(int index) {
     setState(() {
       selectedIndex = index;
+      widget.onTabselected(index);
     });
   }
 
-  @override
+  @override 
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.all(16.0),

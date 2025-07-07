@@ -1,4 +1,6 @@
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
+import 'package:myapp/views/others/conversation_page.dart';
 
 class Chats extends StatefulWidget {
   const Chats({super.key});
@@ -34,12 +36,33 @@ class _ChatsState extends State<Chats> {
               ),
             ),
           ),
-        SliverList.builder(
-          itemCount: 100,itemBuilder: (contex, index){
-          return CupertinoListTile.notched(title: Text('Hello World $index')
-          ,subtitle: Text('it works'),);
-        })
-      ])
+          SliverList.builder(
+            itemCount: 100,
+            itemBuilder: (contex, index) {
+              return CupertinoListTile(
+                leading: CircleAvatar(
+                  radius: 60,
+                  backgroundImage: NetworkImage(
+                    'https://www.bu.edu/files/2013/05/v2_MF-Headshot-030813.jpg',
+                  ),
+                ),
+                title: Text('Otema John'),
+                subtitle: Text('Hey John, How are you?'),
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    CupertinoPageRoute(
+                      builder: (context) {
+                        return ConversationPage();
+                      },
+                    ),
+                  );
+                },
+              );
+            },
+          ),
+        ],
+      ),
     );
   }
 }
