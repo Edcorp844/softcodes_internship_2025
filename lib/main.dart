@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
+import 'package:myapp/navigation/custom_nav_bar.dart';
 import 'package:myapp/views/core/chats.dart';
-import 'package:myapp/widgets/navigation/cutom_nav_bar.dart';
+
 
 void main() {
   runApp(WhatsApp());
@@ -11,7 +12,11 @@ class WhatsApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const CupertinoApp(home: Home());
+    return const CupertinoApp(
+      theme: CupertinoThemeData(
+        primaryColor: CupertinoColors.activeGreen
+      ),
+      home: Home());
   }
 }
 
@@ -33,5 +38,6 @@ class _HomeState extends State<Home> {
         ],
       ),
     );
-  }
+  } 
 }
+

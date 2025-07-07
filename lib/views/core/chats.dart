@@ -34,9 +34,12 @@ class _ChatsState extends State<Chats> {
               ),
             ),
           ),
-          // You can add more Slivers here, such as a chat list
-        ],
-      ),
+        SliverList.builder(
+          itemCount: 100,itemBuilder: (contex, index){
+          return CupertinoListTile.notched(title: Text('Hello World $index')
+          ,subtitle: Text('it works'),);
+        })
+      ])
     );
   }
 }

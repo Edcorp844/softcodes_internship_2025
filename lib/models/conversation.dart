@@ -40,5 +40,3 @@ class Message {
     required this.read,
   });
 }
-
-
